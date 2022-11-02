@@ -30,9 +30,8 @@ jobs:
     - uses: ncipollo/release-action@v1
       with:
         artifacts: "DahlDesignDDU.simhubdash"
-        token: ${{ secrets.releasetoken }}
-        prerelease: github.event.inputs.is-pre-release
+        prerelease: ${{ github.event.inputs.is-pre-release }}
         replacesArtifacts: true
         allowUpdates: true
-        name: github.event.inputs.version
+        name: ${{ github.event.inputs.version }}
     
